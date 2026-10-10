@@ -13,7 +13,7 @@ static int __init my_init(void)
 {
 	major = register_chrdev(0, my_device, &fops);
 	if (major < 0) {
-		printk("%s: character device registration failed\n", my_device);
+		pr_err("%s: character device registration failed\n", my_device);
 		return major;
 	}
 
